@@ -5,10 +5,12 @@ Amplicon identification tool for vertebrate sex chromosomes based on K-mer
 > **Note:** This tool is currently under active development.
 
 
+
 ## Dependencies
 - Python >= 3.13
 - [Meryl 1.0](https://github.com/marbl/meryl)
 - [minimap2](https://github.com/lh3/minimap2)
+
 
 
 ### Python packages
@@ -22,6 +24,7 @@ tqdm==4.67.1
 ```
 
 
+
 ## Installation
 ```bash
 git clone https://github.com/KoByungJune/amplicover.git
@@ -31,6 +34,7 @@ mamba activate amplicover_env
 ```
 
 Meryl 1.0 and minimap2 must be installed separately and available in your `$PATH`.
+
 
 
 ## Usage
@@ -50,16 +54,21 @@ meryl count k=21 output <asm.meryl> <asm.fasta>
 ./amplicover.sh [-o output.bed] <k-dist.tsv> <asm.fasta>
 ```
 
+
+
 ## Input
 
 - A single-chromosome genome assembly in FASTA format (gap-free, no repeat masking required)
 
 ## Output
 
+
+
 BED format with two record types:
 
 - **Array records** (`a1`, `a2`, ...): identified sequence arrays with summary statistics (length, unit count, mean unit length, mean k-mer distance (Q1-Q3), mode k-mer distance, proportion of mode k-mer distance)
 - **Unit records** (`a2.u1`, `a2.u2`, ...): individual units within each array with alignment metrics (coverage, sequence identity, alignment length, query length, effective query length - trimmed when estimated query exceeds array boundary)
+
 
 
 ## Citation
@@ -71,8 +80,10 @@ If you reference Amplicover, please cite:
 > Zenodo DOI: https://doi.org/10.5281/zenodo.18778186
 
 
+
 ## License
 All rights reserved. This software is provided for reference only. Redistribution or modification is not permitted without prior written consent from the authors.
+
 
 
 ## Contact
